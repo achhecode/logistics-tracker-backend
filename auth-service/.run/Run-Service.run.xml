@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run-Service" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.ar.auth_service.AuthServiceApplication" />
+    <module name="auth-service" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

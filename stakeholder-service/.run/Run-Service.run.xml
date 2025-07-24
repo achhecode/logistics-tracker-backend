@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run-Service" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.ar.stakeholder_service.StakeholderServiceApplication" />
+    <module name="stakeholder-service" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
