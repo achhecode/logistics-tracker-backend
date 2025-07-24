@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ShipmentDetailsDTO {
+public class ShipmentRequestDetailsDTO {
     private double weight;
     private String itemCategory;
     private String originCountry;
