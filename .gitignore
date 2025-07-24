@@ -222,5 +222,43 @@ trip-service/!**/src/test/**/build/
 trip-service/.vscode/
 
 
+# logistics-models
+
+logistics-models/HELP.md
+logistics-models/target/
+logistics-models/.mvn/wrapper/maven-wrapper.jar
+logistics-models/!**/src/main/**/target/
+logistics-models/!**/src/test/**/target/
+
+### STS ###
+logistics-models/.apt_generated
+logistics-models/.classpath
+logistics-models/.factorypath
+logistics-models/.project
+logistics-models/.settings
+logistics-models/.springBeans
+logistics-models/.sts4-cache
+
+### IntelliJ IDEA ###
+logistics-models/.idea
+logistics-models/*.iws
+logistics-models/*.iml
+logistics-models/*.ipr
+
+### NetBeans ###
+logistics-models//nbproject/private/
+logistics-models//nbbuild/
+logistics-models//dist/
+logistics-models//nbdist/
+logistics-models//.nb-gradle/
+logistics-models/build/
+logistics-models/!**/src/main/**/build/
+logistics-models/!**/src/test/**/build/
+
+### VS Code ###
+logistics-models/.vscode/
+
+
+
 .idea/*
 .vscode/

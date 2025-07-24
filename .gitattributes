@@ -20,3 +20,7 @@ stakeholder-service/*.cmd text eol=crlf
 
 trip-service/mvnw text eol=lf
 trip-service/*.cmd text eol=crlf
+
+
+logistics-models/mvnw text eol=lf
+logistics-models/*.cmd text eol=crlf
