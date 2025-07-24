@@ -220,3 +220,7 @@ trip-service/!**/src/test/**/build/
 
 ### VS Code ###
 trip-service/.vscode/
+
+
+.idea/*
+.vscode/
