@@ -1,0 +1,222 @@
+# find > ^(?!\s*#|\s*$)(.*)
+# OR
+# find > ^(?!\s*#|\s*$)(?!api-gateway/)(.*)
+
+# replace > service-name/$1
+
+# Example: # replace > api-gateway/$1
+
+# api-gateway
+api-gateway/HELP.md
+api-gateway/target/
+api-gateway/.mvn/wrapper/maven-wrapper.jar
+api-gateway/!**/src/main/**/target/
+api-gateway/!**/src/test/**/target/
+
+### STS ###
+api-gateway/.apt_generated
+api-gateway/.classpath
+api-gateway/.factorypath
+api-gateway/.project
+api-gateway/.settings
+api-gateway/.springBeans
+api-gateway/.sts4-cache
+
+### IntelliJ IDEA ###
+api-gateway/.idea
+api-gateway/*.iws
+api-gateway/*.iml
+api-gateway/*.ipr
+
+### NetBeans ###
+api-gateway//nbproject/private/
+api-gateway//nbbuild/
+api-gateway//dist/
+api-gateway//nbdist/
+api-gateway//.nb-gradle/
+api-gateway/build/
+api-gateway/!**/src/main/**/build/
+api-gateway/!**/src/test/**/build/
+
+### VS Code ###
+api-gateway/.vscode/
+
+
+# auth-service
+auth-service/HELP.md
+auth-service/target/
+auth-service/.mvn/wrapper/maven-wrapper.jar
+auth-service/!**/src/main/**/target/
+auth-service/!**/src/test/**/target/
+
+### STS ###
+auth-service/.apt_generated
+auth-service/.classpath
+auth-service/.factorypath
+auth-service/.project
+auth-service/.settings
+auth-service/.springBeans
+auth-service/.sts4-cache
+
+### IntelliJ IDEA ###
+auth-service/.idea
+auth-service/*.iws
+auth-service/*.iml
+auth-service/*.ipr
+
+### NetBeans ###
+auth-service//nbproject/private/
+auth-service//nbbuild/
+auth-service//dist/
+auth-service//nbdist/
+auth-service//.nb-gradle/
+auth-service/build/
+auth-service/!**/src/main/**/build/
+auth-service/!**/src/test/**/build/
+
+### VS Code ###
+auth-service/.vscode/
+
+
+# discovery-service
+discovery-service/HELP.md
+discovery-service/target/
+discovery-service/.mvn/wrapper/maven-wrapper.jar
+discovery-service/!**/src/main/**/target/
+discovery-service/!**/src/test/**/target/
+
+### STS ###
+discovery-service/.apt_generated
+discovery-service/.classpath
+discovery-service/.factorypath
+discovery-service/.project
+discovery-service/.settings
+discovery-service/.springBeans
+discovery-service/.sts4-cache
+
+### IntelliJ IDEA ###
+discovery-service/.idea
+discovery-service/*.iws
+discovery-service/*.iml
+discovery-service/*.ipr
+
+### NetBeans ###
+discovery-service//nbproject/private/
+discovery-service//nbbuild/
+discovery-service//dist/
+discovery-service//nbdist/
+discovery-service//.nb-gradle/
+discovery-service/build/
+discovery-service/!**/src/main/**/build/
+discovery-service/!**/src/test/**/build/
+
+### VS Code ###
+discovery-service/.vscode/
+
+
+# invoice-service
+invoice-service/HELP.md
+invoice-service/target/
+invoice-service/.mvn/wrapper/maven-wrapper.jar
+invoice-service/!**/src/main/**/target/
+invoice-service/!**/src/test/**/target/
+
+### STS ###
+invoice-service/.apt_generated
+invoice-service/.classpath
+invoice-service/.factorypath
+invoice-service/.project
+invoice-service/.settings
+invoice-service/.springBeans
+invoice-service/.sts4-cache
+
+### IntelliJ IDEA ###
+invoice-service/.idea
+invoice-service/*.iws
+invoice-service/*.iml
+invoice-service/*.ipr
+
+### NetBeans ###
+invoice-service//nbproject/private/
+invoice-service//nbbuild/
+invoice-service//dist/
+invoice-service//nbdist/
+invoice-service//.nb-gradle/
+invoice-service/build/
+invoice-service/!**/src/main/**/build/
+invoice-service/!**/src/test/**/build/
+
+### VS Code ###
+invoice-service/.vscode/
+
+
+# stakeholder-service
+stakeholder-service/HELP.md
+stakeholder-service/target/
+stakeholder-service/.mvn/wrapper/maven-wrapper.jar
+stakeholder-service/!**/src/main/**/target/
+stakeholder-service/!**/src/test/**/target/
+
+### STS ###
+stakeholder-service/.apt_generated
+stakeholder-service/.classpath
+stakeholder-service/.factorypath
+stakeholder-service/.project
+stakeholder-service/.settings
+stakeholder-service/.springBeans
+stakeholder-service/.sts4-cache
+
+### IntelliJ IDEA ###
+stakeholder-service/.idea
+stakeholder-service/*.iws
+stakeholder-service/*.iml
+stakeholder-service/*.ipr
+
+### NetBeans ###
+stakeholder-service//nbproject/private/
+stakeholder-service//nbbuild/
+stakeholder-service//dist/
+stakeholder-service//nbdist/
+stakeholder-service//.nb-gradle/
+stakeholder-service/build/
+stakeholder-service/!**/src/main/**/build/
+stakeholder-service/!**/src/test/**/build/
+
+### VS Code ###
+stakeholder-service/.vscode/
+
+
+# trip-service
+trip-service/HELP.md
+trip-service/target/
+trip-service/.mvn/wrapper/maven-wrapper.jar
+trip-service/!**/src/main/**/target/
+trip-service/!**/src/test/**/target/
+
+### STS ###
+trip-service/.apt_generated
+trip-service/.classpath
+trip-service/.factorypath
+trip-service/.project
+trip-service/.settings
+trip-service/.springBeans
+trip-service/.sts4-cache
+
+### IntelliJ IDEA ###
+trip-service/.idea
+trip-service/*.iws
+trip-service/*.iml
+trip-service/*.ipr
+
+### NetBeans ###
+trip-service//nbproject/private/
+trip-service//nbbuild/
+trip-service//dist/
+trip-service//nbdist/
+trip-service//.nb-gradle/
+trip-service/build/
+trip-service/!**/src/main/**/build/
+trip-service/!**/src/test/**/build/
+
+### VS Code ###
+trip-service/.vscode/

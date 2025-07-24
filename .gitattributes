@@ -1,0 +1,22 @@
+api-gateway/mvnw text eol=lf
+api-gateway/*.cmd text eol=crlf
+
+
+auth-service/mvnw text eol=lf
+auth-service/*.cmd text eol=crlf
+
+
+discovery-service/mvnw text eol=lf
+discovery-service/*.cmd text eol=crlf
+
+
+invoice-service/mvnw text eol=lf
+invoice-service/*.cmd text eol=crlf
+
+
+stakeholder-service/mvnw text eol=lf
+stakeholder-service/*.cmd text eol=crlf
+
+
+trip-service/mvnw text eol=lf
+trip-service/*.cmd text eol=crlf
