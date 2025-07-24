@@ -1,1 +1,17 @@
-spring.application.name=stakeholder-service
+spring:
+  application:
+    name: stakeholder-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/logistics
+    username: user
+    password: userpassword
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8083
