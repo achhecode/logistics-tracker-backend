@@ -1,7 +1,7 @@
 package com.ar.trip_service.service;
 
 import com.ar.trip_service.dto.ShipmentCost;
-import com.ar.trip_service.dto.ShipmentDetailsDTO;
+import com.ar.trip_service.dto.ShipmentRequestDetailsDTO;
 import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class ShipmentCostService {
     @Value("${price.perKg}")
     private double pricePerKg;
 
-    public ShipmentCost calculateShipmentCost(ShipmentDetailsDTO shipmentDetailsDTO) {
+    public ShipmentCost calculateShipmentCost(ShipmentRequestDetailsDTO shipmentDetailsDTO) {
         int randomDistance = 100 + new Random().nextInt(501);
         double totalCost = (pricePerKg * shipmentDetailsDTO.getWeight()) * randomDistance;
 

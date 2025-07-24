@@ -14,9 +14,9 @@ public class TripDTO {
     private Long id;
     private String origin;
     private String destination;
-    private double weight;
-    private String vehicleNumber;
+//    private double weight;
+//    private String vehicleNumber;
     private LocalDate startDate;
-    private LocalDate endDate;
+//    private LocalDate endDate;
     private TripStatus status;
 }

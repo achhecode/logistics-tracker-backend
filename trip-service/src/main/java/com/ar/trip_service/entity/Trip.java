@@ -12,21 +12,30 @@ public class Trip {
     @GeneratedValue
     private Long id;
 
+    private String trackingId; // TODO: need to move to appropriate model
+
     private String origin;
     private String destination;
     private LocalDate startDate;
     private LocalDate expectedDeliveryDate;
     private LocalDate actualDeliveryDate;
-    private double weight;
-    private String vehicleNumber;
 
     @Enumerated(EnumType.STRING)
     private TripStatus status;
 
-    private LocalDate endDate;
-    private Long consigneeId;
-    private Long brokerId;
+//    @ManyToOne
+//    private Consignee consigneeId;
 
-    @ManyToOne
-    private Driver driver;
+    private String consigneeName;
+
+//    @ManyToOne
+//    private Broker brokerId;
+
+    private String brokerName;
+
+//    @ManyToOne
+//    private Driver driver;
+
+    private String driver;
+
 }

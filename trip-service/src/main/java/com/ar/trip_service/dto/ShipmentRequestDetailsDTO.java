@@ -8,12 +8,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShipmentRequestDetailsDTO {
-    private double weight;
-    private String itemCategory;
     private String originCountry;
     private String originCity;
-    private int originPin;
+    private String originAddress;
+    private String originContactPerson;
+    private String originMobile;
+    private String originPin;
     private String destCountry;
     private String destCity;
-    private int destPin;
+    private String destAddress;
+    private String destContactPerson;
+    private String destMobile;
+    private String destPin;
+    private String itemCategory;
+    private double weight;
+    private String totalAmount;
+    private String payAdvance;
+    private int advancePercent;
+    private String referredByType;
+    private String referredByName;
 }

@@ -1,9 +1,7 @@
 package com.ar.trip_service.controller;
 
-import com.ar.trip_service.dto.ShipmentCost;
-import com.ar.trip_service.dto.ShipmentDetailsDTO;
 import com.ar.trip_service.dto.TripDTO;
-import com.ar.trip_service.service.ShipmentCostService;
+import com.ar.trip_service.entity.Trip;
 import com.ar.trip_service.service.TripService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 //@CrossOrigin(origins = "*")
-@RequestMapping("/**")
+@RequestMapping("/api/trips")
 @Slf4j
 public class TripController {
     @Autowired
@@ -26,5 +24,10 @@ public class TripController {
     @GetMapping("/{id}")
     public ResponseEntity<TripDTO> getTrip(@PathVariable Long id) {
         return ResponseEntity.ok(tripService.getTripById(id));
+    }
+
+    @GetMapping("/track")
+    public ResponseEntity<Trip> getTrip(@RequestParam String trackingId) {
+        return ResponseEntity.ok(tripService.getTripByTrackingId(trackingId));
     }
 }
