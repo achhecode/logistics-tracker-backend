@@ -1,4 +1,4 @@
-package com.ar.booking_service.util;
+package com.ar.booking_service.mapper;
 
 import com.ar.booking_service.entity.UserContactEmbeddable;
 import com.ar.logistics_models.dto.UserContactDTO;

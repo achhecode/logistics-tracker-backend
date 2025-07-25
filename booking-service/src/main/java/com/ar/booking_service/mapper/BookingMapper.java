@@ -1,4 +1,4 @@
-package com.ar.booking_service.util;
+package com.ar.booking_service.mapper;
 
 import com.ar.booking_service.dto.BookingRequestDTO;
 import com.ar.booking_service.dto.BookingResponseDTO;

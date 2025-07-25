@@ -1,9 +1,7 @@
-package com.ar.booking_service.util;
+package com.ar.booking_service.mapper;
 
 import com.ar.booking_service.entity.AddressEmbeddable;
 import com.ar.logistics_models.dto.AddressDTO;
-
-import java.util.Arrays;
 
 public class AddressMapper {
     public static AddressEmbeddable toEmbeddable(AddressDTO dto) {
