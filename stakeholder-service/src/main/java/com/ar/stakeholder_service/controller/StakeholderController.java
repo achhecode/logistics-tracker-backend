@@ -1,7 +1,6 @@
 package com.ar.stakeholder_service.controller;
 
 import com.ar.logistics_models.dto.StakeholderDTO;
-import com.ar.stakeholder_service.dto.StakeholderDTO;
 import com.ar.stakeholder_service.service.StakeholderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,5 +21,10 @@ public class StakeholderController {
     @GetMapping("/{id}")
     public ResponseEntity<StakeholderDTO> getById(@PathVariable Long id) {
         return ResponseEntity.ok(stakeholderService.getStakeholderById(id));
+    }
+
+    @GetMapping("/{stakeHolderId}")
+    public ResponseEntity<StakeholderDTO> getStakeholderByStakeHolderId(@PathVariable String stakeHolderId) {
+        return ResponseEntity.ok(stakeholderService.getStakeholderByStakeHolderId(stakeHolderId));
     }
 }

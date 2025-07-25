@@ -1,6 +1,8 @@
 package com.ar.stakeholder_service.service;
 
 import com.ar.logistics_models.dto.StakeholderDTO;
+import com.ar.stakeholder_service.entity.StakeholderEntity;
+import com.ar.stakeholder_service.mapper.StakeholderEntityDTOMapper;
 import com.ar.stakeholder_service.repository.StakeholderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +15,24 @@ public class StakeholderService {
     @Autowired
     private StakeholderRepository stakeholderRepository;
 
-    public StakeholderDTO createStakeholder(StakeholderDTO dto) {
+    @Autowired
+    private StakeholderEntityDTOMapper stakeholderEntityDTOMapper;
 
-        return null;
+    public StakeholderDTO createStakeholder(StakeholderDTO stakeholderDTO) {
+        StakeholderEntity entity = stakeholderEntityDTOMapper.toEntity(stakeholderDTO);
+        stakeholderRepository.save(entity);
+        return stakeholderEntityDTOMapper.toDTO(entity);
     }
 
     public StakeholderDTO getStakeholderById(Long id) {
-        return null;
+        StakeholderEntity entity = stakeholderRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Stakeholder not found: " + id));
+        return stakeholderEntityDTOMapper.toDTO(entity);
+    }
+
+    public StakeholderDTO getStakeholderByStakeHolderId(String stakeHolderId) {
+        StakeholderEntity entity = stakeholderRepository.findByStakeHolderId(stakeHolderId)
+                .orElseThrow(() -> new RuntimeException("Stakeholder not found: " + stakeHolderId));
+        return stakeholderEntityDTOMapper.toDTO(entity);
     }
 }
