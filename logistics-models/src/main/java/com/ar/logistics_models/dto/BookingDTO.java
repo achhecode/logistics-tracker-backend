@@ -20,6 +20,5 @@ public class BookingDTO {
     private StakeholderDTO receiver;
     private String brokerId; // Optional
     private BookingStatus status;
-    private BookingStatus bookingStatus;
 }
 

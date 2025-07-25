@@ -4,7 +4,15 @@ import com.ar.logistics_models.options.GoodsType;
 import com.ar.logistics_models.options.MassUnit;
 import com.ar.logistics_models.options.UnitType;
 import com.ar.logistics_models.options.VolumeUnit;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class GoodsDTO {
     private int id;
     private GoodsType goodsType;

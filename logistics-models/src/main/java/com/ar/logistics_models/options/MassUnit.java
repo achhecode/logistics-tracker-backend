@@ -4,6 +4,7 @@ public enum MassUnit {
     MG,  // Milligram
     G,   // Gram
     KG,  // Kilogram
-    TON  // Metric Ton
+    TON,  // Metric Ton
+    NA
 }
 
