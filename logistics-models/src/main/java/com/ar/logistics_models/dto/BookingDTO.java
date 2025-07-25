@@ -16,9 +16,11 @@ public class BookingDTO {
     private String bookingId;
     private String customerId;
     private List<GoodsDTO> goodsList;
-    private StakeholderDTO sender;
-    private StakeholderDTO receiver;
+    private AddressDTO sender;
+    private AddressDTO receiver;
     private String brokerId; // Optional
     private BookingStatus status;
+    private PaymentPreferenceDTO paymentPreferenceDTO;
+    private ReferralDTO referralDTO;
 }
 

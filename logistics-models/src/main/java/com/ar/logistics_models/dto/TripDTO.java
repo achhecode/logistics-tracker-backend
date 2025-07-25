@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -18,5 +19,7 @@ public class TripDTO {
     private String vehicleId;
     private String driverId;
     private TripStatus status;
+    private Instant eta;
+    private Instant createdAt;
     private List<TripEventDTO> events;
 }

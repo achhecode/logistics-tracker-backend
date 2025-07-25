@@ -6,12 +6,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class StakeholderDTO {
-    private String id;
+    private String stakeHolderId;
+    private String name;
     private StakeholderType type;
-    private double commissionRate;
+    private String contactEmail;
+    private String contactPhone;
+    private BigDecimal commissionRate;
 }

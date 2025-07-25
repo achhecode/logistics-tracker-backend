@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -13,8 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class TripEventDTO {
+    private String tripId;
     private EventType eventType;
     private String location;
+    private String description;
     private LocalDateTime timestamp;
-    private double cost;
+    private BigDecimal cost;
 }

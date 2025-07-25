@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class InvoiceItemDTO {
+    private String invoiceId;
     private String description;
     private double amount;
 }
