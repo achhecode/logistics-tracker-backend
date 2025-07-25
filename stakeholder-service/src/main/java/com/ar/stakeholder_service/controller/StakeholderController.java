@@ -1,5 +1,6 @@
 package com.ar.stakeholder_service.controller;
 
+import com.ar.logistics_models.dto.StakeholderDTO;
 import com.ar.stakeholder_service.dto.StakeholderDTO;
 import com.ar.stakeholder_service.service.StakeholderService;
 import org.springframework.beans.factory.annotation.Autowired;
