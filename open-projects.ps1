@@ -5,10 +5,10 @@ $intellijProjects = @(
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\discovery-service"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\api-gateway"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\auth-service"
-  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\invoice-service"
-  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\stakeholder-service"
-  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\trip-service"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\booking-service"
+  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\trip-service"
+  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\stakeholder-service"
+  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\invoice-service"
 )
 
 # VS Code Projects (absolute paths)
