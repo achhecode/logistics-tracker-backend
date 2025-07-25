@@ -24,3 +24,7 @@ trip-service/*.cmd text eol=crlf
 
 logistics-models/mvnw text eol=lf
 logistics-models/*.cmd text eol=crlf
+
+
+booking-service/mvnw text eol=lf
+booking-service/*.cmd text eol=crlf

@@ -259,6 +259,42 @@ logistics-models/!**/src/test/**/build/
 logistics-models/.vscode/
 
 
+# booking-service
+
+booking-service/HELP.md
+booking-service/target/
+booking-service/.mvn/wrapper/maven-wrapper.jar
+booking-service/!**/src/main/**/target/
+booking-service/!**/src/test/**/target/
+
+### STS ###
+booking-service/.apt_generated
+booking-service/.classpath
+booking-service/.factorypath
+booking-service/.project
+booking-service/.settings
+booking-service/.springBeans
+booking-service/.sts4-cache
+
+### IntelliJ IDEA ###
+booking-service/.idea
+booking-service/*.iws
+booking-service/*.iml
+booking-service/*.ipr
+
+### NetBeans ###
+booking-service//nbproject/private/
+booking-service//nbbuild/
+booking-service//dist/
+booking-service//nbdist/
+booking-service//.nb-gradle/
+booking-service/build/
+booking-service/!**/src/main/**/build/
+booking-service/!**/src/test/**/build/
+
+### VS Code ###
+booking-service/.vscode/
+
 
 .idea/*
 .vscode/
