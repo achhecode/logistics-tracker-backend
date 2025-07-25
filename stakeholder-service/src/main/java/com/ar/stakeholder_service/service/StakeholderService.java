@@ -1,8 +1,6 @@
 package com.ar.stakeholder_service.service;
 
 import com.ar.logistics_models.dto.StakeholderDTO;
-import com.ar.stakeholder_service.dto.StakeholderDTO;
-import com.ar.stakeholder_service.entity.StakeholderEntity;
 import com.ar.stakeholder_service.repository.StakeholderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
