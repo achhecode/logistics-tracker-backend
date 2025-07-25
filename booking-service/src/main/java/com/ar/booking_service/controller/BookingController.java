@@ -1,5 +1,7 @@
 package com.ar.booking_service.controller;
 
+import com.ar.booking_service.dto.BookingCostRequestDTO;
+import com.ar.booking_service.dto.BookingCostResponseDTO;
 import com.ar.booking_service.dto.BookingRequestDTO;
 import com.ar.booking_service.dto.BookingResponseDTO;
 import com.ar.booking_service.service.BookingService;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
+@CrossOrigin(origins = "*")
 @RequestMapping("/bookings")
 public class BookingController {
 
@@ -26,6 +29,12 @@ public class BookingController {
     @GetMapping("/{bookingId}")
     public ResponseEntity<BookingResponseDTO> getBooking(@PathVariable String bookingId) {
         BookingResponseDTO response = bookingService.getBookingById(bookingId);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/cost")
+    public ResponseEntity<BookingCostResponseDTO> getBookingCost(@RequestBody BookingCostRequestDTO bookingRequestDTO) {
+        BookingCostResponseDTO response = bookingService.calculateBookingCost(bookingRequestDTO);
         return ResponseEntity.ok(response);
     }
 }
