@@ -8,11 +8,12 @@ $intellijProjects = @(
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\invoice-service"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\stakeholder-service"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\trip-service"
+  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\booking-service"
 )
 
 # VS Code Projects (absolute paths)
 $vscodeProjects = @(
-#   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-db"
+  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-db"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-frontend\logistics-tracker"
 )
