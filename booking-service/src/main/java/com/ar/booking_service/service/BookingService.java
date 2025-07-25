@@ -5,20 +5,22 @@ import com.ar.booking_service.dto.BookingCostResponseDTO;
 import com.ar.booking_service.dto.BookingRequestDTO;
 import com.ar.booking_service.dto.BookingResponseDTO;
 import com.ar.booking_service.entity.BookingEntity;
+import com.ar.booking_service.mapper.BookingEntityDTOMapper;
 import com.ar.booking_service.repository.BookingRepository;
-import com.ar.booking_service.util.BookingMapper;
+import com.ar.booking_service.mapper.BookingMapper;
 import com.ar.booking_service.util.HexIdGenerator;
+import com.ar.logistics_models.dto.BookingDTO;
 import com.ar.logistics_models.dto.GoodsDTO;
 import com.ar.logistics_models.options.BookingStatus;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
-import java.util.UUID;
 
 @Slf4j
 @Service
@@ -29,7 +31,11 @@ public class BookingService {
     private double pricePerKg;
 
 
-    private final BookingRepository bookingRepository;
+    @Autowired
+    private BookingRepository bookingRepository;
+
+    @Autowired
+    private BookingEntityDTOMapper bookingEntityDTOMapper;
 
     // Save booking
     public BookingResponseDTO createBooking(BookingRequestDTO request) {
@@ -45,6 +51,12 @@ public class BookingService {
         BookingEntity entity = bookingRepository.findByBookingId(bookingId)
                 .orElseThrow(() -> new RuntimeException("Booking not found: " + bookingId));
         return BookingMapper.toResponseDTO(entity);
+    }
+
+    public BookingDTO getBookingAllDetailsById(String bookingId){
+        BookingEntity entity = bookingRepository.findByBookingId(bookingId)
+                .orElseThrow(() -> new RuntimeException("Booking not found: " + bookingId));
+        return bookingEntityDTOMapper.toDTO(entity);
     }
 
     public BookingCostResponseDTO calculateBookingCost(BookingCostRequestDTO bookingCostRequestDTO) {

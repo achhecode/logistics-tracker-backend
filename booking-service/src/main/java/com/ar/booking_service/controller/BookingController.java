@@ -5,6 +5,7 @@ import com.ar.booking_service.dto.BookingCostResponseDTO;
 import com.ar.booking_service.dto.BookingRequestDTO;
 import com.ar.booking_service.dto.BookingResponseDTO;
 import com.ar.booking_service.service.BookingService;
+import com.ar.logistics_models.dto.BookingDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,8 +28,14 @@ public class BookingController {
     }
 
     @GetMapping("/{bookingId}")
-    public ResponseEntity<BookingResponseDTO> getBooking(@PathVariable String bookingId) {
+    public ResponseEntity<BookingResponseDTO> getBookingById(@PathVariable String bookingId) {
         BookingResponseDTO response = bookingService.getBookingById(bookingId);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/{bookingId}/all-details")
+    public ResponseEntity<BookingDTO> getBookingAllDetailsById(@PathVariable String bookingId) {
+        BookingDTO response = bookingService.getBookingAllDetailsById(bookingId);
         return ResponseEntity.ok(response);
     }
 
