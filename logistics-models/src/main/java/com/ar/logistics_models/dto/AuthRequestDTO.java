@@ -1,6 +1,5 @@
 package com.ar.logistics_models.dto;
 
-import com.ar.logistics_models.options.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserDto {
-    private int id;
-    private String username;
-    private String name;
+public class AuthRequestDTO {
     private String email;
-    private String phone;
-    private UserRole role;
+    private String password;
 }
