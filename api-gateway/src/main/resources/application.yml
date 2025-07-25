@@ -23,11 +23,11 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/api/auth/**
+            - Path=/auth/**
         - id: trip-service
           uri: lb://trip-service
           predicates:
-            - Path=/api/trips/**
+            - Path=/trips/**
         - id: booking-service
           uri: lb://booking-service
           predicates:
@@ -35,12 +35,12 @@ spring:
         - id: invoice-service
           uri: lb://invoice-service
           predicates:
-            - Path=/api/invoices/**
+            - Path=/invoices/**
 
         - id: stakeholder-service
           uri: lb://stakeholder-service
           predicates:
-            - Path=/api/consignees/**, /api/brokers/**, /api/drivers/**
+            - Path=/consignees/**, /brokers/**, /drivers/**
     loadbalancer:
       ribbon:
         enabled: false
