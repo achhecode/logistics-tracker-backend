@@ -1,7 +1,6 @@
 package com.ar.invoice_service.service;
 
 import com.ar.invoice_service.dto.InvoiceDTO;
-import com.ar.invoice_service.entity.Invoice;
 import com.ar.invoice_service.repository.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
