@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -63,7 +64,6 @@ public class TripServiceImpl implements TripService {
 
         TripEventEntity event = tripEntityDTOMapper.toEntity(eventDTO);
         event.setTrip(trip);
-        event.setTimestamp(Instant.now());
 
         TripEventEntity saved = tripEventRepository.save(event);
         return tripEntityDTOMapper.toDTO(saved);

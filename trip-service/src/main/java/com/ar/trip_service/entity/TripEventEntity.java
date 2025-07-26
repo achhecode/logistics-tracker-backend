@@ -1,5 +1,6 @@
 package com.ar.trip_service.entity;
 
+import com.ar.logistics_models.options.EventType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,8 +35,4 @@ public class TripEventEntity {
     private Instant timestamp;
 
     private BigDecimal cost;
-
-    public enum EventType {
-        FUEL, BREAKDOWN, DELAY
-    }
 }

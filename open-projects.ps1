@@ -9,6 +9,7 @@ $intellijProjects = @(
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\trip-service"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\stakeholder-service"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\invoice-service"
+  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend\logistics-models"
 )
 
 # VS Code Projects (absolute paths)
@@ -83,3 +84,6 @@ foreach ($project in $vscodeProjects) {
 
 Write-Host ""
 Write-Host "All projects opened. If Spring Boot main classes were found, they're now running."
+
+
+# .\open-projects.ps1

@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Data
 @AllArgsConstructor
@@ -18,6 +18,6 @@ public class TripEventDTO {
     private EventType eventType;
     private String location;
     private String description;
-    private LocalDateTime timestamp;
+    private Instant timestamp;
     private BigDecimal cost;
 }

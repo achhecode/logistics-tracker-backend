@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -29,7 +30,8 @@ public class TripEntity {
     @Enumerated(EnumType.STRING)
     private TripStatus status;
     private LocalDate eta;
-    private Instant createdAt;
+    private Instant timestamp;
+    private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL)
     private List<TripEventEntity> events;

@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -19,7 +21,8 @@ public class TripDTO {
     private String vehicleId;
     private String driverId;
     private TripStatus status;
-    private Instant eta;
-    private Instant createdAt;
+    private LocalDate eta;
+    private Instant timestamp;
+    private LocalDateTime createdAt;
     private List<TripEventDTO> events;
 }

@@ -5,6 +5,7 @@ import com.ar.trip_service.entity.TripEntity;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class TripMapper {
     public static TripEntity toEntity(BookingDTO bookingDTO) {
@@ -16,7 +17,8 @@ public class TripMapper {
                 .driverId(null) // generated in service
                 .status(null)
                 .eta(LocalDate.now().plusDays(7))
-                .createdAt(Instant.now())
+                .timestamp(Instant.now())
+                .createdAt(LocalDateTime.now())
                 .events(null)
                 .build();
     }
