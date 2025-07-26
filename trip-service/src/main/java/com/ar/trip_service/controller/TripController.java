@@ -19,7 +19,7 @@ public class TripController {
     private TripService tripService;
 
     // assign vehicle+driver
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<TripDTO> createTrip(@RequestBody BookingDTO bookingDTO) {
         return ResponseEntity.ok(tripService.createTrip(bookingDTO));
     }

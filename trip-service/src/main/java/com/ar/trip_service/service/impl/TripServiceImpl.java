@@ -6,6 +6,7 @@ import com.ar.logistics_models.dto.TripEventDTO;
 import com.ar.logistics_models.options.TripStatus;
 import com.ar.trip_service.entity.TripEntity;
 import com.ar.trip_service.entity.TripEventEntity;
+import com.ar.trip_service.exception.TripAlreadyExistsException;
 import com.ar.trip_service.mapper.TripEntityDTOMapper;
 import com.ar.trip_service.mapper.TripMapper;
 import com.ar.trip_service.repository.TripEventRepository;
@@ -15,23 +16,32 @@ import com.ar.trip_service.util.HexIdGenerator;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class TripServiceImpl implements TripService {
 
-    private final TripRepository tripRepository;
+    @Autowired
+    private TripRepository tripRepository;
+
     private final TripEventRepository tripEventRepository;
     private final TripEntityDTOMapper tripEntityDTOMapper;
 
     @Override
     @Transactional
     public TripDTO createTrip(BookingDTO bookingDTO) {
+        // find by booking id, if exists not create another trip for same order
+        if (tripRepository.findByBookingId(bookingDTO.getBookingId()).isPresent()) {
+            throw new TripAlreadyExistsException(bookingDTO.getBookingId());
+        }
+
         TripEntity entity = TripMapper.toEntity(bookingDTO);
         entity.setTripId(HexIdGenerator.generateHexId());
         entity.setVehicleId(HexIdGenerator.generateVehicleId());
