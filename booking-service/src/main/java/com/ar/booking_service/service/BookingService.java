@@ -76,6 +76,7 @@ public class BookingService {
 
 
     public boolean bookingExists(String bookingId) {
+        log.info("Checking if booking id {} exists", bookingId);
         return bookingRepository.existsByBookingId(bookingId);
     }
 
