@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 import java.util.Random;
 
 @Slf4j
@@ -36,6 +37,12 @@ public class BookingService {
 
     @Autowired
     private BookingEntityDTOMapper bookingEntityDTOMapper;
+
+    public List<BookingDTO> getBookings(){
+        List<BookingEntity> events = bookingRepository.findAll();
+        return events.stream()
+                .map(bookingEntityDTOMapper::toDTO).toList();
+    }
 
     // Save booking
     public BookingResponseDTO createBooking(BookingRequestDTO request) {

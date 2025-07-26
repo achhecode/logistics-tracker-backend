@@ -28,5 +28,6 @@ public class GoodsEmbeddable {
     @Enumerated(EnumType.STRING)
     private VolumeUnit volumeUnit;
     private String unitLabel;
+    private int declaredValue;
 }
 

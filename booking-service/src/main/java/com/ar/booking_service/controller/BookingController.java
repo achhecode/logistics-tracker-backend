@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @Slf4j
 @CrossOrigin(origins = "*")
@@ -20,6 +22,12 @@ public class BookingController {
 
     @Autowired
     private BookingService bookingService;
+
+    @GetMapping
+    public ResponseEntity<List<BookingDTO>> getBookings() {
+        List<BookingDTO> bookingResponseDTOS = bookingService.getBookings();
+        return ResponseEntity.status(HttpStatus.CREATED).body(bookingResponseDTOS);
+    }
 
     @PostMapping
     public ResponseEntity<BookingResponseDTO> createBooking(@RequestBody BookingRequestDTO request) {
