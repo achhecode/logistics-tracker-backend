@@ -4,6 +4,7 @@ import com.ar.logistics_models.dto.BookingDTO;
 import com.ar.logistics_models.dto.TripDTO;
 import com.ar.logistics_models.dto.TripEventDTO;
 import com.ar.logistics_models.options.TripStatus;
+import com.ar.trip_service.dto.TripRequest;
 import com.ar.trip_service.service.TripService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class TripController {
 
     // assign vehicle+driver
     @PostMapping("/add")
-    public ResponseEntity<TripDTO> createTrip(@RequestBody BookingDTO bookingDTO) {
-        return ResponseEntity.ok(tripService.createTrip(bookingDTO));
+    public ResponseEntity<TripDTO> createTrip(@RequestBody TripRequest tripRequest) {
+        return ResponseEntity.ok(tripService.createTrip(tripRequest));
     }
 
     @GetMapping("/{id}")

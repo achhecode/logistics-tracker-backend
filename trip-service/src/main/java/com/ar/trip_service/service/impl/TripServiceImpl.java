@@ -5,6 +5,7 @@ import com.ar.logistics_models.dto.TripDTO;
 import com.ar.logistics_models.dto.TripEventDTO;
 import com.ar.logistics_models.options.EventType;
 import com.ar.logistics_models.options.TripStatus;
+import com.ar.trip_service.dto.TripRequest;
 import com.ar.trip_service.entity.TripEntity;
 import com.ar.trip_service.entity.TripEventEntity;
 import com.ar.trip_service.exception.TripAlreadyExistsException;
@@ -22,6 +23,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -39,17 +42,23 @@ public class TripServiceImpl implements TripService {
 
     @Override
     @Transactional
-    public TripDTO createTrip(BookingDTO bookingDTO) {
+    public TripDTO createTrip(TripRequest tripRequest) {
         // find by booking id, if exists not create another trip for same order
-        if (tripRepository.findByBookingId(bookingDTO.getBookingId()).isPresent()) {
-            throw new TripAlreadyExistsException(bookingDTO.getBookingId());
+        if (tripRepository.findByBookingId(tripRequest.getTrackingId()).isPresent()) {
+            throw new TripAlreadyExistsException(tripRequest.getTrackingId());
         }
 
-        TripEntity entity = TripMapper.toEntity(bookingDTO);
-        entity.setTripId(HexIdGenerator.generateHexId());
-        entity.setVehicleId(HexIdGenerator.generateVehicleId());
-        entity.setDriverId(HexIdGenerator.generateDriverId());
-        entity.setStatus(TripStatus.IN_PROGRESS);
+        TripEntity entity = TripEntity.builder()
+                .tripId(HexIdGenerator.generateHexId())
+                .bookingId(tripRequest.getTrackingId())
+                .vehicleId(HexIdGenerator.generateVehicleId()) // generated in service
+                .driverId(HexIdGenerator.generateDriverId()) // generated in service
+                .status(TripStatus.IN_PROGRESS)
+                .eta(LocalDate.now().plusDays(7))
+                .timestamp(Instant.now())
+                .createdAt(LocalDateTime.now())
+                .events(null)
+                .build();
         TripEntity saved = tripRepository.save(entity);
         return tripEntityDTOMapper.toDTO(saved);
     }
