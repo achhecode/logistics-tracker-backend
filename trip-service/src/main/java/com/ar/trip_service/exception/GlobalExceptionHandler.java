@@ -14,6 +14,13 @@ public class GlobalExceptionHandler {
         );
     }
 
+    @ExceptionHandler(BookingNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleBookingNotFound(BookingNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(
+                new ErrorResponse(HttpStatus.CONFLICT.value(), ex.getMessage())
+        );
+    }
+
     // Optional: fallback for unhandled exceptions
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleOtherExceptions(Exception ex) {
