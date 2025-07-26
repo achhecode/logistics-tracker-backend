@@ -20,7 +20,7 @@ public class BookingDTO {
     private AddressDTO receiver;
     private String brokerId; // Optional
     private BookingStatus status;
-    private PaymentPreferenceDTO paymentPreferenceDTO;
-    private ReferralDTO referralDTO;
+    private PaymentPreferenceDTO paymentPreference;
+    private ReferralDTO referral;
 }
 

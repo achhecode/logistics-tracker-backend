@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class GoodsDTO {
-    private int id;
     private GoodsType goodsType;
     private int quantity;
     private UnitType unitType;
