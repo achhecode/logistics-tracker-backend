@@ -75,5 +75,9 @@ public class BookingService {
     }
 
 
+    public boolean bookingExists(String bookingId) {
+        return bookingRepository.existsByBookingId(bookingId);
+    }
+
 }
 

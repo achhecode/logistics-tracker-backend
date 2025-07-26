@@ -44,4 +44,9 @@ public class BookingController {
         BookingCostResponseDTO response = bookingService.calculateBookingCost(bookingRequestDTO);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/exists/{bookingId}")
+    public boolean bookingExists(@PathVariable String bookingId) {
+        return bookingService.bookingExists(bookingId);
+    }
 }

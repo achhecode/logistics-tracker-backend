@@ -12,6 +12,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "bookings")
+//@Table(name = "bookings", uniqueConstraints = @UniqueConstraint(columnNames = "bookingId"))
+//@Table(name = "bookings", uniqueConstraints = @UniqueConstraint(columnNames = {"customerId", "bookingId"}))
 @Data
 @Builder
 @NoArgsConstructor // Required for JPA
@@ -22,6 +24,7 @@ public class BookingEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String bookingId;
     private String customerId;
 

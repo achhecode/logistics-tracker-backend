@@ -10,5 +10,6 @@ import java.util.Optional;
 @Repository
 public interface BookingRepository extends JpaRepository<BookingEntity, Long> {
     Optional<BookingEntity> findByBookingId(String bookingId);
+    boolean existsByBookingId(String bookingId);
 }
 
