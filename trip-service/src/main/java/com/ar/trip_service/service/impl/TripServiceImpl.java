@@ -3,6 +3,7 @@ package com.ar.trip_service.service.impl;
 import com.ar.logistics_models.dto.BookingDTO;
 import com.ar.logistics_models.dto.TripDTO;
 import com.ar.logistics_models.dto.TripEventDTO;
+import com.ar.logistics_models.options.EventType;
 import com.ar.logistics_models.options.TripStatus;
 import com.ar.trip_service.entity.TripEntity;
 import com.ar.trip_service.entity.TripEventEntity;
@@ -21,8 +22,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -75,6 +74,12 @@ public class TripServiceImpl implements TripService {
     public TripEventDTO logEvent(TripEventDTO eventDTO) {
         TripEntity trip = tripRepository.findByTripId(eventDTO.getTripId())
                 .orElseThrow(() -> new RuntimeException("Trip not found for tripId " + eventDTO.getTripId()));
+
+        // if delivered
+        if(eventDTO.getEventType().equals(EventType.DELIVERY)){
+            trip.setStatus(TripStatus.COMPLETED);
+            tripRepository.save(trip);
+        }
 
         TripEventEntity event = tripEntityDTOMapper.toEntity(eventDTO);
         event.setTimestamp(Instant.now());
