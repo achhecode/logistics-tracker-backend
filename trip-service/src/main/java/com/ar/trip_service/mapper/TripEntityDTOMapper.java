@@ -14,6 +14,7 @@ public interface TripEntityDTOMapper {
     TripDTO toDTO(TripEntity entity);
     TripEntity toEntity(TripDTO dto);
 
+//    @Mapping(source = "trip.tripId", target = "tripId")
     TripEventDTO toDTO(TripEventEntity entity);
     TripEventEntity toEntity(TripEventDTO dto);
 

@@ -8,6 +8,7 @@ import com.ar.trip_service.entity.TripEntity;
 import com.ar.trip_service.entity.TripEventEntity;
 import com.ar.trip_service.exception.TripAlreadyExistsException;
 import com.ar.trip_service.mapper.TripEntityDTOMapper;
+import com.ar.trip_service.mapper.TripEntityToDTOMapper;
 import com.ar.trip_service.mapper.TripMapper;
 import com.ar.trip_service.repository.TripEventRepository;
 import com.ar.trip_service.repository.TripRepository;
@@ -33,6 +34,9 @@ public class TripServiceImpl implements TripService {
 
     private final TripEventRepository tripEventRepository;
     private final TripEntityDTOMapper tripEntityDTOMapper;
+
+    @Autowired
+    private TripEntityToDTOMapper tripEntityToDTOMapper;
 
     @Override
     @Transactional
@@ -68,15 +72,18 @@ public class TripServiceImpl implements TripService {
 
     @Override
     @Transactional
-    public TripEventDTO logEvent(String tripId, TripEventDTO eventDTO) {
-        TripEntity trip = tripRepository.findByTripId(tripId)
-                .orElseThrow(() -> new RuntimeException("Trip not found for bookingId " + tripId));
+    public TripEventDTO logEvent(TripEventDTO eventDTO) {
+        TripEntity trip = tripRepository.findByTripId(eventDTO.getTripId())
+                .orElseThrow(() -> new RuntimeException("Trip not found for tripId " + eventDTO.getTripId()));
 
         TripEventEntity event = tripEntityDTOMapper.toEntity(eventDTO);
+        event.setTimestamp(Instant.now());
         event.setTrip(trip);
 
+        trip.getEvents().add(event); // ensures consistency in bidirectional mapping
+
         TripEventEntity saved = tripEventRepository.save(event);
-        return tripEntityDTOMapper.toDTO(saved);
+        return tripEntityToDTOMapper.toDTO(saved);
     }
 
     @Override

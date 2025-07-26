@@ -9,6 +9,6 @@ public interface TripService {
     TripDTO createTrip(BookingDTO bookingDTO);
     TripDTO getTripById(Long id);
     TripDTO getTripByTripId(String tripId);
-    TripEventDTO logEvent(String tripId, TripEventDTO eventDTO);
+    TripEventDTO logEvent(TripEventDTO eventDTO);
     TripDTO updateTripStatus(String tripId, TripStatus newStatus);
 }

@@ -34,12 +34,11 @@ public class TripController {
         return ResponseEntity.ok(tripService.getTripByTripId(tripId));
     }
 
-    @PostMapping("/{tripId}/events")
+    @PostMapping("/events")
     public ResponseEntity<TripEventDTO> logTripEvent(
-            @PathVariable String tripId,
             @RequestBody TripEventDTO eventDTO
     ) {
-        return ResponseEntity.ok(tripService.logEvent(tripId, eventDTO));
+        return ResponseEntity.ok(tripService.logEvent(eventDTO));
     }
 
     @PutMapping("/{tripId}/status")

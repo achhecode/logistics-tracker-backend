@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,7 +34,8 @@ public class TripEntity {
     private Instant timestamp;
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL)
-    private List<TripEventEntity> events;
+    @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnore // if used in serialization
+    private List<TripEventEntity> events = new ArrayList<>();
 
 }
