@@ -70,6 +70,14 @@ public class TripServiceImpl implements TripService {
     }
 
     @Override
+    public List<TripDTO> getTrips() {
+        List<TripEntity> events = tripRepository.findAll();
+        return events.stream()
+                .map(tripEntityDTOMapper::toDTO)
+                .toList();
+    }
+
+    @Override
     public TripDTO getTripById(Long id) {
         TripEntity entity = tripRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Trip not found with id " + id));

@@ -21,6 +21,11 @@ public class TripController {
     @Autowired
     private TripService tripService;
 
+    @GetMapping
+    public ResponseEntity<List<TripDTO>> getTrips() {
+        return ResponseEntity.ok(tripService.getTrips());
+    }
+
     // assign vehicle+driver
     @PostMapping("/add")
     public ResponseEntity<TripDTO> createTrip(@RequestBody TripRequest tripRequest) {

@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface TripService {
     TripDTO createTrip(TripRequest tripRequest);
+    List<TripDTO> getTrips();
     TripDTO getTripById(Long id);
     TripDTO getTripByTripId(String tripId);
     TripEventDTO logEvent(TripEventDTO eventDTO);
