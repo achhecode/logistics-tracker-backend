@@ -24,6 +24,7 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -101,6 +102,50 @@ public class TripServiceImpl implements TripService {
         TripEventEntity saved = tripEventRepository.save(event);
         return tripEntityToDTOMapper.toDTO(saved);
     }
+
+    @Override
+    @Transactional
+    public TripEventDTO logEvents(List<TripEventDTO> eventDTOs) {
+        return null;
+        // TODO add bulk events feature
+    }
+
+    @Override
+    public List<TripEventDTO> getEvents() {
+        List<TripEventEntity> events = tripEventRepository.findAll();
+        return events.stream()
+                .map(tripEntityToDTOMapper::toDTO)
+                .toList();
+    }
+
+    @Override
+    public TripEventDTO getEventById(String id) {
+        Long eventId;
+        try {
+            eventId = Long.parseLong(id);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Invalid event ID: " + id);
+        }
+
+        TripEventEntity event = tripEventRepository.findById(eventId)
+                .orElseThrow(() -> new RuntimeException("Event not found with id: " + id));
+
+        return tripEntityToDTOMapper.toDTO(event);
+    }
+
+    @Override
+    public List<TripEventDTO> getEventByTripId(String tripId) {
+        List<TripEventEntity> events = tripEventRepository.findByTrip_TripId(tripId);
+
+        if (events.isEmpty()) {
+            throw new RuntimeException("No events found for tripId: " + tripId);
+        }
+
+        return events.stream()
+                .map(tripEntityToDTOMapper::toDTO)
+                .toList();
+    }
+
 
     @Override
     @Transactional
