@@ -26,7 +26,7 @@ public class BookingController {
     @GetMapping
     public ResponseEntity<List<BookingDTO>> getBookings() {
         List<BookingDTO> bookingResponseDTOS = bookingService.getBookings();
-        return ResponseEntity.status(HttpStatus.CREATED).body(bookingResponseDTOS);
+        return ResponseEntity.status(HttpStatus.OK).body(bookingResponseDTOS);
     }
 
     @PostMapping
