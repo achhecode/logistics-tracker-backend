@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface BookingEntityDTOMapper {
     BookingDTO toDTO(BookingEntity entity);
-    BookingEntity toEntity(BookingDTO bookingDTO);
+    BookingEntity toEntity(BookingDTO dto);
 
     List<GoodsDTO> toDTO(List<GoodsEmbeddable> entities);
     List<GoodsEmbeddable> toEntities(List<GoodsDTO> dtos);
