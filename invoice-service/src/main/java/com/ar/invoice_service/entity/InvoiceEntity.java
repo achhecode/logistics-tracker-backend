@@ -1,13 +1,23 @@
 package com.ar.invoice_service.entity;
 
+import com.ar.logistics_models.options.InvoiceStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "invoices")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class InvoiceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,13 +36,11 @@ public class InvoiceEntity {
     private BigDecimal total;
     private BigDecimal paidAmount;
 
-    private Instant createdAt;
-    private Instant paidAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime paidAt;
 
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
     private List<InvoiceItemEntity> items;
+    private BigDecimal totalPaidAmount;
 
-    public enum InvoiceStatus {
-        DRAFT, ISSUED, PAID, OVERDUE
-    }
 }

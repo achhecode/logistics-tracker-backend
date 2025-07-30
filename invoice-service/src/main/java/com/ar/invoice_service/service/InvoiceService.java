@@ -1,10 +1,11 @@
 package com.ar.invoice_service.service;
 
-import com.ar.invoice_service.dto.InvoiceDTO;
+import com.ar.invoice_service.entity.InvoiceEntity;
+import com.ar.invoice_service.mapper.InvoiceEntityDTOMapper;
 import com.ar.invoice_service.repository.InvoiceRepository;
+import com.ar.logistics_models.dto.InvoiceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
@@ -13,24 +14,21 @@ public class InvoiceService {
     @Autowired
     private InvoiceRepository invoiceRepository;
 
-    public InvoiceDTO createInvoice(InvoiceDTO dto) {
-        Invoice invoice = new Invoice();
-        invoice.setTripId(dto.getTripId());
-        invoice.setIssueDate(dto.getIssueDate());
-        invoice.setDueDate(dto.getDueDate());
-        invoice.setAmount(dto.getAmount());
-        invoice.setStatus(dto.getStatus());
+    @Autowired
+    private InvoiceEntityDTOMapper invoiceEntityDTOMapper;
 
-        Invoice saved = invoiceRepository.save(invoice);
-        dto.setId(saved.getId());
+
+    public InvoiceDTO createInvoice(InvoiceDTO dto) {
+        InvoiceEntity invoiceEntity = invoiceEntityDTOMapper.toEntity(dto);
+
+        InvoiceEntity saved = invoiceRepository.save(invoiceEntity);
         return dto;
     }
 
     public InvoiceDTO getInvoiceById(Long id) {
-        Optional<Invoice> opt = invoiceRepository.findById(id);
+        Optional<InvoiceEntity> opt = invoiceRepository.findById(id);
         if (opt.isEmpty()) throw new RuntimeException("Invoice not found");
 
-        Invoice i = opt.get();
-        return new InvoiceDTO(i.getId(), i.getTripId(), i.getIssueDate(), i.getDueDate(), i.getAmount(), i.getStatus());
+        return invoiceEntityDTOMapper.toDTO(opt.get());
     }
 }

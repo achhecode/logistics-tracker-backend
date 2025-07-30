@@ -1,7 +1,7 @@
 package com.ar.invoice_service.controller;
 
-import com.ar.invoice_service.dto.InvoiceDTO;
 import com.ar.invoice_service.service.InvoiceService;
+import com.ar.logistics_models.dto.InvoiceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
