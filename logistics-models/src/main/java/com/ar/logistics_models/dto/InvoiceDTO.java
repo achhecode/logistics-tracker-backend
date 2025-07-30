@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -15,7 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class InvoiceDTO {
-    private String invoiceId;
     private String bookingId;
     private String tripId;
     private String issuedTo;
@@ -24,8 +24,8 @@ public class InvoiceDTO {
     private BigDecimal taxes;
     private BigDecimal total;
     private BigDecimal paidAmount;
-    private Instant createdAt;
-    private Instant paidAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime paidAt;
     private List<InvoiceItemDTO> items;
-    private double paid;
+    private BigDecimal totalPaidAmount;
 }
