@@ -14,9 +14,10 @@ $intellijProjects = @(
 
 # VS Code Projects (absolute paths)
 $vscodeProjects = @(
-  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend"
+#   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-backend"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-db"
   "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-frontend\logistics-tracker"
+  "C:\Users\danish.ar\Documents\Projects\logistics-invoice-tracker\logistics-tracker-k8s"
 )
 
 # ================= Functions =================
